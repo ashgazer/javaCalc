@@ -11,31 +11,42 @@ public class Main {
         char[] opCodes = {'d', 'a', 's', 'm' };
         double[] results = new double[opCodes.length];
 
-
-//
-//        double val1 =100;
-//        double val2 = 50;
-//        double result;
-//        char opCode = 'd';
-//
         for (int i = 0; i < opCodes.length; i++) {
-
-
-            if (opCodes[i] == 'a')
-                results[i] = leftVals[i] + rightVals[i];
-            else if (opCodes[i] == 's')
-                results[i] = leftVals[i] - rightVals[i];
-            else if (opCodes[i] == 'd')
-                results[i] = rightVals[i] != 0.0d ? leftVals[i] / rightVals[i] : 0.0d;
-            else if (opCodes[i] == 'm')
-                results[i] = leftVals[i] * rightVals[i];
-            else {
+            switch(opCodes[i]) {
+                case 'a':
+                    results[i] = leftVals[i] + rightVals[i];
+                    break;
+                case 's':
+                    results[i] = leftVals[i] + rightVals[i];
+                    break;
+                case 'd':
+                    results[i] = rightVals[i] != 0.0d ? leftVals[i] / rightVals[i] : 0.0d;
+                    break;
+                case 'm':
+                    results[i] = leftVals[i] * rightVals[i];
+                    break;
+                default:
+                {
                 System.out.println("bad operator");
                 results[i] = 0.00d;
+                break;
             }
 
+            }
+//            if (opCodes[i] == 'a')
+//                results[i] = leftVals[i] + rightVals[i];
+//            else if (opCodes[i] == 's')
+//                results[i] = leftVals[i] - rightVals[i];
+//            else if (opCodes[i] == 'd')
+//                results[i] = rightVals[i] != 0.0d ? leftVals[i] / rightVals[i] : 0.0d;
+//            else if (opCodes[i] == 'm')
+//                results[i] = leftVals[i] * rightVals[i];
+//            else {
+//                System.out.println("bad operator");
+//                results[i] = 0.00d;
+//            }
+
         }
-//            System.out.println(results);
 
         for ( double theresult : results)
                     System.out.println(theresult);
