@@ -16,9 +16,40 @@ public class Main {
 
         for( MathEquation equation : equations) {
             equation.execute();
+            System.out.print("result=");
             System.out.println(equation.getResult());
 
         }
+
+        System.out.println();
+        System.out.println("using method overload");
+        System.out.println();
+
+//        double newleftval = 9.0d;
+//        double newrightVal = 4.0d;
+
+        int newleftval = 9;
+        int newrightVal = 4;
+
+
+        MathEquation equationWithOverload = new MathEquation('d');
+        equationWithOverload.execute(newleftval, newrightVal);
+        System.out.print("result=");
+
+        System.out.println(equationWithOverload.getResult());
+
+        equationWithOverload.execute((double) newleftval, newrightVal);
+        System.out.print("result=");
+
+        System.out.println(equationWithOverload.getResult());
+
+
+        
+
+
+        
+
+
 
 
 
